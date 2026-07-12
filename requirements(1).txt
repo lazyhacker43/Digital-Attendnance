@@ -1,7 +1,0 @@
-fastapi
-uvicorn[standard]
-sqlalchemy
-pyjwt
-passlib[bcrypt]
-bycrypt==4.0.1
-python-multipart
