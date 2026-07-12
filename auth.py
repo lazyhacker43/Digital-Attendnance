@@ -12,7 +12,7 @@ import jwt
 # reuse this in anything real.
 SECRET_KEY = "sprint-project-secret-change-me"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 120
+ACCESS_TOKEN_EXPIRE_MINUTES = 90
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
