@@ -47,7 +47,7 @@ Then install your starting dependencies:
 pip install pytest numpy pandas
 ```
 
-Note on `face_recognition`/`dlib`: that library requires a C++ compiler (`cmake`) to install and can be genuinely painful to set up on Windows. Don't install it on Day 1 — get your mock pipeline and tests working first (Steps 2–3 below), then tackle the real encoding install on Day 2 when your actual sprint task calls for it. If it fights you, `pip install face_recognition` on Mac usually needs `brew install cmake` first; on Windows, install "Desktop development with C++" via the Visual Studio Build Tools installer before retrying pip.
+Note on `face_recognition`/`dlib`: that library requires a C++ compiler (`cmake`) to install and can be genuinely painful to set up on Windows. Don't install it on Day 1 — get your mock pipeline and tests working first (Steps 2–3 below), then tackle the real encoding install on Day 2 when your actual sprint task calls for it. If it fights you, `     ` on Mac usually needs `brew install cmake` first; on Windows, install "Desktop development with C++" via the Visual Studio Build Tools installer before retrying pip.
 
 ---
 
