@@ -229,19 +229,10 @@ def finalize_attendance(session_id: int, db: Session = Depends(get_db), teacher:
 
 # ---------- [DAY 6] Minimal export endpoint ----------
 
+
 @app.get("/sessions/{session_id}/export")
-def export_session_attendance(session_id: int, db: Session = Depends(get_db)):
-    """
-    Returns session attendance as JSON for now. Student 3 will wrap this in
-    Pandas/OpenPyXL to produce a real .xlsx file — this endpoint just needs
-    to return the correct data for them to build on.
-    """
+def export_session_attendance(session_id: int, db: Session = Depends(get_db), user: User = Depends(get_current_user)):
     records = db.query(SessionAttendanceStatus).filter(SessionAttendanceStatus.session_id == session_id).all()
-    return [
-        {
-            "student_id": r.student_id,
-            "status": r.status,
-            "matches": r.timestamp_count,
-        }
-        for r in records
-    ]
+    if user.role == "Student":
+        records = [r for r in records if r.student_id == user.user_id]
+    return [{"student_id": r.student_id, "status": r.status, "matches": r.timestamp_count} for r in records]

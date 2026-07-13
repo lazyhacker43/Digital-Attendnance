@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snapshot Attendance Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Snapshot Attendance Tracker</h1>
+  </header>
+
+  <main class="container">
+
+    <!-- Error message area -->
+    <div id="errorBox" class="error-box" style="display:none;"></div>
+
+    <section class="card">
+      <h2>Session Setup</h2>
+
+      <label for="intervalPicker">Session Interval</label>
+      <select id="intervalPicker">
+        <option value="50">50-minute session</option>
+        <option value="90">90-minute session</option>
+      </select>
+
+      <button id="startSessionBtn" class="btn btn-primary">Start Session</button>
+    </section>
+
+    <section class="card">
+      <h2>Live Attendance Status</h2>
+
+      <!-- Visual alert box: JS toggles color classes based on backend rule engine result -->
+      <div id="alertBox" class="alert-box alert-neutral">
+        No session running yet.
+      </div>
+
+      <ul id="studentList" class="student-list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Export</h2>
+      <button id="exportBtn" class="btn btn-secondary">Export Attendance (.xlsx)</button>
+    </section>
+
+  </main>
+
+  <script src="js/mock-data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
