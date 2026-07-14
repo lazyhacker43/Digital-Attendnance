@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Dashboard | Snapshot Attendance Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="dashboard-page">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Sidebar navigation">
+        <div class="brand">
+          <img src="images/logo.svg" alt="Snapshot logo" class="brand-logo" />
+          <div>
+            <h1>Snapshot</h1>
+            <p>Attendance</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="#" class="active">📚 Classes</a>
+          <a href="#">🧠 Session</a>
+          <a href="#">📋 Records</a>
+          <a href="#" id="logoutButton">🚪 Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="topbar-search" role="search">Search student...</div>
+          <div class="topbar-actions">
+            <span class="avatar-chip" id="roleBadge">TEACHER</span>
+            <span class="avatar-chip" id="userGreeting">Welcome</span>
+          </div>
+        </header>
+
+        <section class="page-header">
+          <div>
+            <p class="eyebrow">Teaching Panel</p>
+            <h2>Session Management</h2>
+          </div>
+          <div class="topbar-actions">
+            <button class="primary-btn" id="startSessionButton">Start Session</button>
+            <button class="primary-btn" id="captureSnapshotButton">Capture Snapshot</button>
+            <button class="primary-btn" id="stopSessionButton">Stop Session</button>
+          </div>
+        </section>
+
+        <section class="stats-grid" aria-label="Teacher summary cards">
+          <article class="card stat-card">
+            <h3>Today's Classes</h3>
+            <div class="value">4</div>
+            <div class="trend">2 sessions running</div>
+          </article>
+          <article class="card stat-card">
+            <h3>Present</h3>
+            <div class="value">82</div>
+            <div class="trend">+5 from yesterday</div>
+          </article>
+          <article class="card stat-card">
+            <h3>Absent</h3>
+            <div class="value">12</div>
+            <div class="trend">Needs follow-up</div>
+          </article>
+          <article class="card stat-card">
+            <h3>Attendance %</h3>
+            <div class="value">87%</div>
+            <div class="trend">Strong participation</div>
+          </article>
+        </section>
+
+        <section class="panel-grid">
+          <article class="card">
+            <h3>Attendance Status</h3>
+            <div style="display: grid; gap: 12px; margin-top: 12px;">
+              <div class="badge success">Green: verified present</div>
+              <div class="badge warning">Yellow: late / review</div>
+              <div class="badge danger">Red: absent / flagged</div>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Session Interval</h3>
+            <div class="form-group" style="margin-top: 12px;">
+              <label for="sessionInterval">Choose duration</label>
+              <select id="sessionInterval" name="sessionInterval">
+                <option>50 Minutes</option>
+                <option>90 Minutes</option>
+              </select>
+            </div>
+          </article>
+        </section>
+
+        <section class="card table-card" style="margin-top: 16px;">
+          <div class="page-header">
+            <div>
+              <p class="eyebrow">Live List</p>
+              <h3>Student Attendance</h3>
+            </div>
+            <input class="topbar-search" type="search" placeholder="Search student" aria-label="Search student" />
+          </div>
+          <table id="studentTable">
+            <thead>
+              <tr>
+                <th>Roll No.</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

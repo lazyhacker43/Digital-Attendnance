@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard | Snapshot Attendance Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="dashboard-page">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Sidebar navigation">
+        <div class="brand">
+          <img src="images/logo.svg" alt="Snapshot logo" class="brand-logo" />
+          <div>
+            <h1>Snapshot</h1>
+            <p>Attendance</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="#" class="active">👤 Profile</a>
+          <a href="#">📊 Attendance</a>
+          <a href="#">🔔 Notifications</a>
+          <a href="#" id="logoutButton">🚪 Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="topbar-search" role="search">Student portal</div>
+          <div class="topbar-actions">
+            <span class="avatar-chip" id="roleBadge">STUDENT</span>
+            <span class="avatar-chip" id="userGreeting">Welcome</span>
+          </div>
+        </header>
+
+        <section class="page-header">
+          <div>
+            <p class="eyebrow">Student Dashboard</p>
+            <h2>Your Attendance</h2>
+          </div>
+          <button class="primary-btn" id="exportReportButton">Download Attendance Report</button>
+        </section>
+
+        <section class="panel-grid">
+          <article class="card">
+            <h3>Student Profile</h3>
+            <p>Student ID: ST-102</p>
+            <p>Department: Computer Science</p>
+            <p>Current Status: Present</p>
+          </article>
+          <article class="card">
+            <h3>Attendance Percentage</h3>
+            <div class="value">92%</div>
+            <div class="trend">Excellent consistency</div>
+          </article>
+        </section>
+
+        <section class="card" style="margin-top: 16px;">
+          <h3>Subject Wise Attendance</h3>
+          <div style="display: grid; gap: 12px; margin-top: 12px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span>Mathematics</span><span>95%</span>
+              </div>
+              <div style="height: 10px; background: var(--surface-muted); border-radius: 999px; overflow: hidden;">
+                <div style="width: 95%; height: 100%; background: var(--success);"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span>Physics</span><span>88%</span>
+              </div>
+              <div style="height: 10px; background: var(--surface-muted); border-radius: 999px; overflow: hidden;">
+                <div style="width: 88%; height: 100%; background: var(--primary);"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card table-card" style="margin-top: 16px;">
+          <h3>Attendance History</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Jul 11</td><td>Math</td><td><span class="badge success">Present</span></td></tr>
+              <tr><td>Jul 10</td><td>Physics</td><td><span class="badge warning">Late</span></td></tr>
+              <tr><td>Jul 09</td><td>English</td><td><span class="badge success">Present</span></td></tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
