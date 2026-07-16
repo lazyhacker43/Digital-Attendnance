@@ -1,11 +1,14 @@
-from export_report import export_session_report
+import requests
 
-mock_session = {
-    "student_101": "present",
-    "student_102": "partial",
-    "student_103": "absent",
-}
+login_response = requests.post(
+    "http://127.0.0.1:8000/login",
+    data={"username": "integrationtest@test.com", "password": "test123"}
+)
+token = login_response.json()["access_token"]
 
-df = export_session_report(mock_session)
-print("\n--- Generated report contents ---")
-print(df)
+headers = {"Authorization": f"Bearer {token}"}
+response = requests.get(
+    "http://127.0.0.1:8000/sessions/1/export",
+    headers=headers
+)
+print("Export:", response.status_code, response.json())
