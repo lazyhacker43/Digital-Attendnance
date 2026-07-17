@@ -1,6 +1,6 @@
 // All calls to Student 1's FastAPI backend live here.
 // Swap API_BASE for the deployed Render/Railway URL on Day 6-7.
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://snap-in.onrender.com/";
 
 async function fetchSessionStatus(sessionId) {
   try {
@@ -35,13 +35,7 @@ async function createSession(intervalMinutes) {
       },
       body: JSON.stringify({ interval_minutes: intervalMinutes })
     });
-
-    if (!response.ok) {
-      throw new Error(`Server responded with ${response.status}`);
-    }
-
     return await response.json();
-
   } catch (error) {
     showError("Could not start session. Check your connection and try again.");
     console.error(error);
